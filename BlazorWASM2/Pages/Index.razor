@@ -1,0 +1,23 @@
+﻿@page "/"
+@page "/modelExample"
+@using BlazorBarcodeScanner.ZXing.JS
+@inject IModalService Modal
+
+
+<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))">View </button>
+
+@code
+{
+    private string LocalBarcodeText;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        BlazorBarcodeScanner.ZXing.JS.JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
+    }
+
+    private void LocalReceivedBarcodeText(BarcodeReceivedEventArgs args)
+    {
+        this.LocalBarcodeText = args.BarcodeText;
+        StateHasChanged();
+    }
+}

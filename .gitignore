@@ -1,0 +1,62 @@
+# Compiled source #
+*.pdb
+*.class
+*.dll
+*.exe
+*.obj
+*.cache
+
+# Packages #
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Project specific Files #
+*.user
+*.suo
+obj/
+bin/
+_ReSharper*/
+packages/
+TestResults/
+*.Publish.xml
+_bin_deployableAssemblies/
+App_Data/
+connectionStrings*.config
+*.DotSettings
+*.jtconfig
+_output/
+_output2/
+/.vs
+/.idea
+
+# TFS
+*.vspscc
+
+# Azure folders
+csx/
+rcf/
+
+# Office
+~$*.*
+
+# setup-related
+/_setup
+/sh.exe.stackdump
+/_Installer/licensing-setup-cache
+/_Installer/Setup Files
+
+# These should be included #
+!packages/**/*.targets
+
+# From Robert
+# Logs #
+*.log
+lib/RCWF
